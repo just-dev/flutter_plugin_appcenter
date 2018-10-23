@@ -7,12 +7,12 @@ class AppCenter {
   static const MethodChannel _channel = const MethodChannel('aloisdeniel.github.com/flutter_plugin_appcenter/appcenter');
 
   /// Starts App Center services
-  static Future<String> configure(String app_secret) =>  _channel.invokeMethod('configure', <String, dynamic>{
-    'app_secret': app_secret,
+  static Future<String> configure(String appSecret) =>  _channel.invokeMethod('configure', <String, String>{
+    'app_secret': appSecret,
   });
 
-  static Future<dynamic> start(String app_secret, List<String> services) =>  _channel.invokeMethod('start', <String, dynamic>{
-    'app_secret': app_secret,
+  static Future<dynamic> start(String appSecret, List<String> services) =>  _channel.invokeMethod('start', <String, dynamic>{
+    'app_secret': appSecret,
     'services': services
   });
 
